@@ -1,3 +1,3 @@
-require("sharker") 
+require("sharker")
 print("Hello")
 
