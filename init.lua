@@ -1,3 +1,2 @@
 require("sharker")
-print("Hello")
 
