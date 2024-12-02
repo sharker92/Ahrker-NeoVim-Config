@@ -24,7 +24,7 @@ vim.keymap.set({ "n", "v" }, "<leader>d", "\"_d", { desc = "Delete text to black
 vim.keymap.set("i", "<C-c>", "<Esc>", { desc = "Use Ctrl+C as Esc" })
 
 vim.keymap.set("n", "Q", "<nop>", { desc = "Disable Ex mode" })
---vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, { desc = "Format code using LSP" })
 
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz", { desc = "Next item in quickfix list and center cursor" })
