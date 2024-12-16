@@ -1,5 +1,6 @@
 return {
     'nvim-treesitter/nvim-treesitter',
+    enabled = true,
     build = ':TSUpdate', -- Automatically update parsers
     config = function()
         require('nvim-treesitter.configs').setup({
@@ -13,9 +14,9 @@ return {
             -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
             auto_install = true,
 
-            indent = {
-                enable = true, -- Enable indentation
-            },
+            -- indent = {
+            --     enable = true, -- Enable indentation experimental feature
+            -- },
             highlight = {
                 enable = true,
 
