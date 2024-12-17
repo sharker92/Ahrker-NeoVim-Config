@@ -5,7 +5,7 @@ return {
 		"WhoIsSethDaniel/mason-tool-installer",
 		"hrsh7th/cmp-nvim-lsp",
 	},
-	enable = true,
+	enabled = true,
 	config = function()
 		local mason = require("mason")
 		local mason_lspconfig = require("mason-lspconfig")
@@ -86,4 +86,3 @@ return {
 		})
 	end,
 }
-

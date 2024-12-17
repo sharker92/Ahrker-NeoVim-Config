@@ -37,7 +37,7 @@ return {
 				cwd = vim.fn.stdpath("data") .. "/lazy",
 			})
 		end, { desc = "Find lazy packages" })
-		vim.keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
+		vim.keymap.set("n", "<leader>td", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
 
 		require("plugins.telescope.multigrep").setup()
 	end,

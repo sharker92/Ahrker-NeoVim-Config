@@ -30,10 +30,10 @@ vim.keymap.set("i", "<C-c>", "<Esc>", { desc = "Use Ctrl+C as Esc" })
 vim.keymap.set("n", "Q", "<nop>", { desc = "Disable Ex mode" })
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
-vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz", { desc = "Next item in quickfix list and center cursor" })
-vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz", { desc = "Previous item in quickfix list and center cursor" })
-vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz", { desc = "Next item in location list and center cursor" })
-vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz", { desc = "Previous item in location list and center cursor" })
+vim.keymap.set("n", "<C-j>", "<cmd>cnext<CR>zz", { desc = "Next item in quickfix list and center cursor" })
+vim.keymap.set("n", "<C-k>", "<cmd>cprev<CR>zz", { desc = "Previous item in quickfix list and center cursor" })
+vim.keymap.set("n", "<leader>j", "<cmd>lnext<CR>zz", { desc = "Next item in location list and center cursor" })
+vim.keymap.set("n", "<leader>k", "<cmd>lprev<CR>zz", { desc = "Previous item in location list and center cursor" })
 
 vim.keymap.set(
 	"n",
@@ -74,3 +74,19 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 		vim.highlight.on_yank({ timeout = 200 })
 	end,
 })
+
+local job_id = 0
+vim.keymap.set("n", "<leader>st", function()
+	vim.cmd.vnew()
+	vim.cmd.term()
+	vim.cmd.wincmd("J")
+	vim.api.nvim_win_set_height(0, 15)
+
+	job_id = vim.bo.channel
+end)
+
+vim.keymap.set("n", "<leader>example", function()
+	vim.fn.chansend(job_id, { "echo hi\r\n" })
+end)
+
+vim.opt.fixeol = true

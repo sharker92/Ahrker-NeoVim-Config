@@ -38,10 +38,6 @@ return {
 					builtin.lsp_type_definitions()
 				end, create_opts("Show LSP type definitions"))
 
-				keymap.set("n", "<leader>vD", function()
-					builtin.diagnostics({ bufnr = 0 })
-				end, create_opts("Show diagnostics for file"))
-
 				keymap.set("n", "K", function()
 					vim.lsp.buf.hover()
 				end, create_opts("Show hover information"))
@@ -54,6 +50,9 @@ return {
 					vim.diagnostic.open_float()
 				end, create_opts("Show diagnostics"))
 
+				keymap.set("n", "<leader>vD", function()
+					builtin.diagnostics({ bufnr = 0 })
+				end, create_opts("Show diagnostics for file"))
 				-- keymap.set("n", "<leader>vq", function()
 				-- 	vim.diagnostic.setloclist()
 				-- end, create_opts("Open diagnostic Quickfix"))

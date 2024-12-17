@@ -6,14 +6,12 @@ return {
 		local conform = require("conform")
 
 		local function ensure_newline()
+			vim.fn.bufnr("%")
 			print("is working?")
 			local last_line = vim.fn.getline("$")
 			if last_line ~= "" then
 				print("yes, is working?")
-				local bufnr = vim.api.nvim_get_current_buf()
-				local line_count = vim.api.nvim_buf_line_count(bufnr)
-				vim.api.nvim_buf_set_lines(bufnr, line_count, line_count, false, { "" })
-				-- vim.fn.append(vim.fn.line("$"), "a")
+				vim.fn.append(vim.fn.line("$"), "a")
 			end
 		end
 
@@ -21,7 +19,7 @@ return {
 			lsp_fallback = true,
 			async = false,
 			timeout_ms = 500,
-			callback = ensure_newline,
+			callback = ensure_newline(),
 		}
 
 		conform.setup({
