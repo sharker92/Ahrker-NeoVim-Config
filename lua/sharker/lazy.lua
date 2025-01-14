@@ -17,7 +17,7 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Setup lazy.nvim
 require("lazy").setup({
-	spec = { { import = "plugins" }, { import = "plugins.lsp" } },
+	spec = { { import = "plugins" }, { import = "plugins.core" } },
 	install = { colorscheme = { "gruvbox" } },
 	checker = { enabled = true, notify = false }, -- Automatically check for plugin updates
 	change_detection = {

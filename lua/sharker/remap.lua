@@ -75,6 +75,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
+-- small terminal
 local job_id = 0
 vim.keymap.set("n", "<leader>st", function()
 	vim.cmd.vnew()
@@ -89,4 +90,5 @@ vim.keymap.set("n", "<leader>example", function()
 	vim.fn.chansend(job_id, { "echo hi\r\n" })
 end)
 
-vim.opt.fixeol = true
+vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>", { desc = "Return to normal mode in terminal." })
+

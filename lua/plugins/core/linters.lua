@@ -8,13 +8,14 @@ return {
 	config = function()
 		local lint = require("lint")
 
+		-- TODO: Implement sonarlint-language-server
 		lint.linters_by_ft = {
-			javascript = { "eslint_d", "sonarlint-language-server" },
-			typescript = { "eslint_d", "sonarlint-language-server" },
-			javascriptreact = { "eslint_d", "sonarlint-language-server" },
-			typescriptreact = { "eslint_d", "sonarlint-language-server" },
-			terraform = { "eslint_d", "sonarlint-language-server" },
-			python = { "pylint", "sonarlint-language-server" },
+			javascript = { "eslint_d" },
+			typescript = { "eslint_d" },
+			javascriptreact = { "eslint_d" },
+			typescriptreact = { "eslint_d" },
+			terraform = { "eslint_d" },
+			python = { "pylint" },
 			json = { "jsonlint" },
 		}
 
