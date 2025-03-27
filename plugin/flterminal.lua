@@ -44,11 +44,13 @@ local toggle_terminal = function()
 		if vim.bo[state.floating.buf].buftype ~= "terminal" then
 			vim.cmd.terminal()
 		end
+		vim.cmd("startinsert")
 	else
 		vim.api.nvim_win_hide(state.floating.win)
 	end
 end
 
 vim.api.nvim_create_user_command("Floaterminal", toggle_terminal, {})
-vim.keymap.set({ "n", "t" }, "<leader>ft", toggle_terminal, { desc = "Toggle terminal" })
+vim.keymap.set({ "n", "t" }, "<leader>pf", toggle_terminal, { desc = "Toggle terminal" })
 -- TODO: Enter terminal in insert mode
+

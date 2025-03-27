@@ -31,8 +31,8 @@ return {
 		vim.keymap.set("n", "<F5>", dap.step_back, { desc = "Step Back" })
 		vim.keymap.set("n", "<F10>", dap.restart, { desc = "Restart DAP" })
 
-		vim.keymap.set("n", "<leader>dt", dapui.toggle, { desc = "Dap Toggle UI" })
-		vim.keymap.set("n", "<leader>dr", function()
+		vim.keymap.set("n", "<leader>bt", dapui.toggle, { desc = "Dap Toggle UI" })
+		vim.keymap.set("n", "<leader>br", function()
 			dapui.open({ reset = true })
 		end, { desc = "Reset DAP Windows" })
 
@@ -57,7 +57,7 @@ return {
 		}
 
 		-- TODO: WHY THIS?
-		vim.keymap.set("n", "<leader>da", function()
+		vim.keymap.set("n", "<leader>ba", function()
 			if vim.fn.filereadable(".vscode/launch.json") then
 				local dap_vscode = require("dap.ext.vscode")
 				dap_vscode.load_launchjs(nil, {

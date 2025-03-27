@@ -77,18 +77,23 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 
 -- small terminal
 local job_id = 0
-vim.keymap.set("n", "<leader>st", function()
+vim.keymap.set("n", "<leader>pt", function()
 	vim.cmd.vnew()
 	vim.cmd.term()
 	vim.cmd.wincmd("J")
 	vim.api.nvim_win_set_height(0, 15)
 
 	job_id = vim.bo.channel
-end)
+end, { desc = "Open small terminal" })
 
 vim.keymap.set("n", "<leader>example", function()
 	vim.fn.chansend(job_id, { "echo hi\r\n" })
 end)
 
 vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>", { desc = "Return to normal mode in terminal." })
+vim.keymap.set("n", "<leader>af", "ggVG", { desc = "Select [a]ll [f]ile" })
+
+vim.keymap.set("n", "<leader>o", "o<Esc>", { desc = "Create new line under" })
+vim.keymap.set("n", "<leader>O", "O<Esc>", { desc = "Create new line above" })
+-- TODO: ALERT WHEN CAPS ARE ON.
 

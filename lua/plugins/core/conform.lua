@@ -35,6 +35,13 @@ return {
 				lua = { "stylua" },
 				python = { "isort", "black" },
 			},
+			formatters = {
+				prettierd = {
+					command = "prettier",
+					args = { "--stdin-filepath", vim.api.nvim_buf_get_name(0), "--single-quote" },
+					stdin = true,
+				},
+			},
 
 			-- format_on_save = format_opts,
 			format_on_save = function(bufnr)
