@@ -37,7 +37,6 @@ local execute_lua_code = function(block)
 		else
 			chunk()
 		end
-		return output
 	end)
 
 	-- Restore the original print function
