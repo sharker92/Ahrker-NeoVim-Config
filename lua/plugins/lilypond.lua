@@ -30,7 +30,7 @@ return {
 					main_file = "main.ly",
 					main_folder = "%:p:h",
 					include_dir = nil,
-					pdf_viewer = nil,
+					pdf_viewer = "zathura",
 					errors = {
 						diagnostics = true,
 						quickfix = "external",
@@ -118,7 +118,7 @@ return {
 					border_style = "single",
 					winhighlight = "Normal:Normal,FloatBorder:Normal,FloatTitle:Normal",
 					midi_synth = "fluidsynth",
-					fluidsynth_flags = nil,
+					fluidsynth_flags = "/opt/homebrew/Cellar/fluid-synth/2.4.4/share/fluid-synth/sf2/VintageDreamsWaves-v2.sf3",
 					timidity_flags = nil,
 					audio_format = "mp3",
 					mpv_flags = {
