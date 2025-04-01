@@ -45,5 +45,6 @@ print("this", "is", "python", "code")
 # Credits
 
 SHARKER
-teej_dv Advent of Neovim 🎄
+@tjdevries Advent of Neovim 🎄
+https://github.com/tjdevries/present.nvim/blob/master/lua/present.lua
 
