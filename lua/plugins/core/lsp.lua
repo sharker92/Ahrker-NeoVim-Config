@@ -58,11 +58,11 @@ return {
 				-- end, create_opts("Open diagnostic Quickfix"))
 
 				keymap.set("n", "[d", function()
-					vim.diagnostic.goto_next()
+					vim.diagnostic.jump({ count = 1, float = true })
 				end, create_opts("Go to next diagnostic"))
 
 				keymap.set("n", "]d", function()
-					vim.diagnostic.goto_prev()
+					vim.diagnostic.jump({ count = -1, float = true })
 				end, create_opts("Go to previous diagnostic"))
 
 				keymap.set({ "n", "v" }, "<leader>vca", function()
@@ -84,10 +84,23 @@ return {
 			end,
 		})
 
-		local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
-		for type, icon in pairs(signs) do
-			local hl = "DiagnosticSign" .. type
-			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-		end
+		vim.diagnostic.config({
+			signs = {
+				active = {
+					{ name = "DiagnosticSignError", text = " " },
+					{ name = "DiagnosticSignWarn", text = " " },
+					{ name = "DiagnosticSignHint", text = "󰠠 " },
+					{ name = "DiagnosticSignInfo", text = " " },
+				},
+			},
+			-- Optional: Additional diagnostic options
+			underline = true,
+			update_in_insert = false,
+			severity_sort = true,
+			virtual_text = {
+				prefix = "●", -- or any symbol you prefer
+			},
+		})
 	end,
 }
+

@@ -7,6 +7,7 @@ return {
 	config = function()
 		local nvimtree = require("nvim-tree")
 		local api = require("nvim-tree.api")
+		local harpoon = require("harpoon")
 		-- disable netrw at the very start of your init.lua
 		vim.g.loaded_netrw = 1
 		vim.g.loaded_netrwPlugin = 1
@@ -16,8 +17,14 @@ return {
 				return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
 			end
 			api.config.mappings.default_on_attach(bufnr)
-			vim.keymap.set("n", "<C-n>", "", opts("Disable <C-n>"))
-			vim.keymap.set("n", "<C-e>", "", opts("Disable <C-e>"))
+			-- vim.keymap.set("n", "<C-n>", "", opts("Disable <C-n>"))
+			-- vim.keymap.set("n", "<C-e>", "", opts("Disable <C-e>"))
+			vim.keymap.set("n", "<C-n>", function()
+				harpoon:list():select(1)
+			end)
+			vim.keymap.set("n", "<C-e>", function()
+				harpoon:list():select(2)
+			end)
 			vim.keymap.set("n", "<C-S-e>", api.node.open.replace_tree_buffer, opts("Open: In Place"))
 		end
 
