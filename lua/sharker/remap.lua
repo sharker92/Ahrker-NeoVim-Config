@@ -97,3 +97,9 @@ vim.keymap.set("n", "<leader>o", "o<Esc>", { desc = "Create new line under" })
 vim.keymap.set("n", "<leader>O", "O<Esc>", { desc = "Create new line above" })
 -- TODO: ALERT WHEN CAPS ARE ON.
 
+-- Lilipond
+vim.api.nvim_create_autocmd("BufEnter", {
+	command = "syntax sync fromstart",
+	pattern = { "*.ly", "*.ily", "*.tex" },
+})
+

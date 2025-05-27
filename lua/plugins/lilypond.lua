@@ -13,7 +13,7 @@ return {
 					player = "<F3>",
 					compile = "<F5>",
 					open_pdf = "<F6>",
-					switch_buffers = "<A-Space>",
+					switch_buffers = "<C-b>",
 					insert_version = "<F4>",
 					hyphenation = "<F12>",
 					hyphenation_change_lang = "<F11>",
@@ -100,7 +100,7 @@ return {
 				mappings = {
 					quit = "q",
 					play_pause = "p",
-					loop = "<A-l>",
+					loop = "<C-l>",
 					backward = "h",
 					small_backward = "<S-h>",
 					forward = "l",
@@ -118,7 +118,7 @@ return {
 					border_style = "single",
 					winhighlight = "Normal:Normal,FloatBorder:Normal,FloatTitle:Normal",
 					midi_synth = "fluidsynth",
-					fluidsynth_flags = "/opt/homebrew/Cellar/fluid-synth/2.4.4/share/fluid-synth/sf2/VintageDreamsWaves-v2.sf3",
+					fluidsynth_flags = "/opt/homebrew/opt/fluid-synth/share/fluid-synth/sf2/VintageDreamsWaves-v2.sf3",
 					timidity_flags = nil,
 					audio_format = "mp3",
 					mpv_flags = {
